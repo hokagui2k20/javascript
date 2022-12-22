@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Multas</title>
+</head>
+<body>
+    <h1>Sistema de multas do DETRAN</h1>
+    Velocidade do Carro é <input type="number" name="txtvel" id="txtvel"> Km/h
+    <input type="submit" value="Verificar" onclick="calcular()">
+    <div id="res">
+
+    </div>
+    <script>
+    function calcular() {
+        var txtv = window.document.querySelector('input#txtvel')
+        var res = window.document.querySelector('div#res')
+        var vel = Number(txtv.value)
+        res.innerHTML = `<p>Sua velocidade é mais de ${vel}Km/h é o bryan??</p>`
+        if (vel > 60) {
+            res.innerHTML +=`<p>Voce foi MULTADO SEU IDIOTA!!!</P>`
+        }
+        res.innerHTML += `<p>Vamo com calma ae amigao</p>`
+    }
+    </script>
+</body>
+</html>
